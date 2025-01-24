@@ -1,5 +1,5 @@
 class Patient < ApplicationRecord
-  has_many :appointments, dependent: :destroy
+  has_many :appointments, dependent: :restrict_with_error
 
   validates :fullname, presence: true, length: { minimum: 3, maximum: 100 }, format: {
     with: /\A([a-zA-Zа-яА-ЯёЁ]+(\s[a-zA-Zа-яА-ЯёЁ]+){1,2})\z/,
