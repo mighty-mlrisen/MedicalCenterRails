@@ -1,0 +1,22 @@
+<div class="page_wrapper">
+    <h1 class="page_title"><%= @patient.fullname %></h1>
+    <div class="attr_wrapper">
+        <p class="attr_title">Age:</p>
+        <div class="attr_data">
+            <%= @patient.age %>
+        </div>
+    </div>
+    <div class="attr_wrapper">
+        <p class="attr_title">Phone:</p>
+        <div class="attr_data">
+            <%= @patient.phone %>
+        </div>
+    </div>
+    <div class="action_links">
+        <p><%= link_to "Back", patients_path, class: "btn btn-secondary" %></p>
+        <p><%= link_to "Edit", edit_patient_path(@patient), class: "btn btn-primary" %></p>
+        <p>
+            <%= button_to "Delete", @patient, method: :delete, class: "btn btn-danger", data: { turbo_confirm: "All of the data about this patient will be deleted. Are you sure?" } %>
+        </p>
+    </div>
+</div>

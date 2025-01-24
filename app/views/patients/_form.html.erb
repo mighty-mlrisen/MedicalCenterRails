@@ -1,0 +1,21 @@
+<div class="page_wrapper2">
+    <div class="form_wrapper">
+        <%= form_with model: patient do |form| %>
+            <div>
+                <%= form.label :fullname, "Full Name" %>
+                <%= form.text_field :fullname, placeholder: "Enter full name" %>
+            </div>
+            <div>
+                <%= form.label :age, "Age" %>
+                <%= form.number_field :age, min: 0, max: 120, step: 1, placeholder: "Enter age" %>
+            </div>
+            <div>
+                <%= form.label :phone, "Phone Number" %>
+                <%= form.telephone_field :phone %>
+            </div>
+            <div>
+                <%= form.submit "Save Patient", class: "btn-primary" %>
+            </div>
+        <% end %>
+    </div>
+</div>

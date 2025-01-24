@@ -1,0 +1,17 @@
+<h1 class="page_title">Patients</h1>
+
+<div class="action_buttons">
+  <%= button_to 'Create New Patient', new_patient_path, method: :get, class: 'btn btn-primary' %>
+</div>
+
+<ul class="list">
+  <% @patients.each do |patient| %>
+    <li class="item">
+      <%= link_to patient.fullname, patient_path(patient), class: 'link' %>
+    </li>
+  <% end %>
+</ul>
+
+<div class="action_buttons">
+  <%= button_to 'Back to Home', root_path, method: :get, class: 'btn btn-secondary' %>
+</div>
