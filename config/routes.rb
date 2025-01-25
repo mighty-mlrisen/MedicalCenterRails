@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root "home#index"
 
+  get "/error", to: "error#index"
   resources :patients
   resources :doctors
   resources :appointments
