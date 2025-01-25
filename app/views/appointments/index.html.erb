@@ -1,0 +1,17 @@
+<h1 class="page_title">Appointments</h1>
+
+<div class="action_buttons">
+  <%= button_to 'Create New Appointment', new_appointment_path, method: :get, class: 'btn btn-primary' %>
+</div>
+
+<ul class="list">
+  <% @appointments.each do |appointment| %>
+    <li class="item">
+      <%= link_to "ID: #{appointment.id},  #{appointment.doctor.fullname} on #{appointment.appointment_date}", appointment_path(appointment), class: 'link' %>
+    </li>
+  <% end %>
+</ul>
+
+<div class="action_buttons">
+  <%= button_to 'Back to Home', root_path, method: :get, class: 'btn btn-secondary' %>
+</div>

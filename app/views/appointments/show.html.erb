@@ -1,0 +1,39 @@
+<div class="page_wrapper">
+    <h1 class="page_title">Appointment with Dr. <%= @appointment.doctor.fullname %></h1>
+    
+    <div class="attr_wrapper">
+        <p class="attr_title">Patient Name:</p>
+        <div class="attr_data">
+            <%= @appointment.patient.fullname %>
+        </div>
+    </div>
+    
+    <div class="attr_wrapper">
+        <p class="attr_title">Appointment Date:</p>
+        <div class="attr_data">
+            <%= @appointment.appointment_date.strftime("%B %d, %Y") %>
+        </div>
+    </div>
+
+    <div class="attr_wrapper">
+        <p class="attr_title">Diagnosis:</p>
+        <div class="attr_data">
+            <%= @appointment.diagnosis %>
+        </div>
+    </div>
+    
+    <div class="attr_wrapper">
+        <p class="attr_title">Notes:</p>
+        <div class="attr_data">
+            <%= @appointment.notes %>
+        </div>
+    </div>
+
+    <div class="action_links">
+        <p><%= link_to "Back to Appointments", appointments_path, class: "btn btn-secondary" %></p>
+        <p><%= link_to "Edit", edit_appointment_path(@appointment), class: "btn btn-primary" %></p>
+        <p>
+            <%= button_to "Delete", @appointment, method: :delete, class: "btn btn-danger", data: { turbo_confirm: "This appointment will be deleted. Are you sure?" } %>
+        </p>
+    </div>
+</div>

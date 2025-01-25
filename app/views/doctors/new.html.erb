@@ -1,0 +1,11 @@
+<div class="page-header">
+  <h1>Add New Doctor</h1>
+</div>
+
+<div class="form-container">
+  <%= render "form", doctor: @doctor %>
+</div>
+
+<div class="navigation-buttons">
+  <%= button_to "Back to Doctors List", doctors_path, method: :get, class: 'btn btn-secondary' %>
+</div>

@@ -1,0 +1,29 @@
+<div class="page_wrapper2">
+    <div class="form_wrapper">
+        <%= form_with model: appointment do |form| %>
+            <div>
+                <%= form.label :patient_id, "Patient" %>
+                <%= form.collection_select :patient_id, Patient.all, :id, :fullname %>
+            </div>
+            <div>
+                <%= form.label :doctor_id, "Doctor" %>
+                <%= form.collection_select :doctor_id, Doctor.all, :id, :fullname %>
+            </div>
+            <div>
+                <%= form.label :appointment_date, "Appointment Date" %>
+                <%= form.date_select :appointment_date %>
+            </div>
+            <div>
+                <%= form.label :diagnosis, "Diagnosis" %>
+                <%= form.text_area :diagnosis, placeholder: "Enter diagnosis" %>
+            </div>
+            <div>
+                <%= form.label :notes, "Notes" %>
+                <%= form.text_area :notes, placeholder: "Enter  notes" %>
+            </div>
+            <div>
+                <%= form.submit "Save Appointment", class: "btn-primary" %>
+            </div>
+        <% end %>
+    </div>
+</div>

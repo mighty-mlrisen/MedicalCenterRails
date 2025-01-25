@@ -1,0 +1,11 @@
+<div class="page-header">
+  <h1>Add New Appointment</h1>
+</div>
+
+<div class="form-container">
+  <%= render "form", appointment: @appointment %>
+</div>
+
+<div class="navigation-buttons">
+  <%= button_to "Back to Appointments List", appointments_path, method: :get, class: 'btn btn-secondary' %>
+</div>

@@ -1,0 +1,24 @@
+<div class="page_wrapper2">
+    <div class="form_wrapper">
+        <%= form_with model: doctor do |form| %>
+            <div>
+                <%= form.label :fullname, "Full Name" %>
+                <%= form.text_field :fullname, placeholder: "Enter full name" %>
+            </div>
+            <div>
+                <%= form.label :specialization, "Specialization" %>
+                <%= form.select :specialization, 
+                    ["Cardiologist", "Dentist", "Neurologist", "Pediatrician", "Surgeon", 
+                     "Orthopedic", "Psychiatrist", "Dermatologist", "Ophthalmologist", "Gynecologist"], 
+                    prompt: "Select specialization" %>
+            </div>
+            <div>
+                <%= form.label :experience, "Experience" %>
+                <%= form.number_field :experience, min: 0, max: 50, step: 1, placeholder: "Enter years of experience" %>
+            </div>
+            <div>
+                <%= form.submit "Save Doctor", class: "btn-primary" %>
+            </div>
+        <% end %>
+    </div>
+</div>

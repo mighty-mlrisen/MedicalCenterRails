@@ -13,10 +13,10 @@
         </div>
     </div>
     <div class="action_links">
-        <p><%= link_to "Back", patients_path, class: "btn btn-secondary" %></p>
-        <p><%= link_to "Edit", edit_patient_path(@patient), class: "btn btn-primary" %></p>
+        <p><%= link_to "Back", patients_path, class: "btn btn-secondary edit1" %></p>
+        <p><%= link_to "Edit", edit_patient_path(@patient), class: "btn btn-primary edit1" %></p>
         <p>
-            <%= button_to "Delete", @patient, method: :delete, class: "btn btn-danger", data: { turbo_confirm: "All of the data about this patient will be deleted. Are you sure?" } %>
+            <%= button_to "Delete", @patient, method: :delete, class: "btn btn-danger delete-btn", data: { turbo_confirm: "All of the data about this patient will be deleted. Are you sure?" } %>
         </p>
     </div>
 </div>
